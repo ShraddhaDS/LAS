@@ -161,6 +161,7 @@
   <ItemGroup>
     <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="bin\Antlr3.Runtime.dll" />
     <Content Include="bin\Web_Api_Project.dll" />
     <Content Include="bin\Web_Api_Project.pdb" />
     <Content Include="Content\bootstrap.css" />
