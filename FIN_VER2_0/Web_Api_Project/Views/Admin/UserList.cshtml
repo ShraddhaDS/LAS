@@ -1,0 +1,155 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Index</title>
+  
+    
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+
+
+<body>
+
+    <div ng-app="Homeapp" ng-controller="AdminController">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-2"></div>
+
+                <div class="col-sm-8">
+
+                    <div class="form-group">
+
+                        <label>First Name</label>
+
+                        <input type="text" ng-model="User.FirstName" class="form-control" />
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Middle Name</label>
+
+                        <input type="text" ng-model="User.MiddleName" class="form-control" />
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Last Name</label>
+
+                        <input type="text" ng-model="User.LastName" class="form-control" />
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Email</label>
+
+                        <input type="text" ng-model="User.Email" class="form-control" />
+
+                    </div>
+                    <div class="form-group">
+
+                        <label>Contact</label>
+
+                        <input type="text" ng-model="User.Contact" class="form-control" />
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Designation</label>
+
+                        <input type="text" ng-model="User.Designation" class="form-control" />
+
+                    </div>
+
+
+                
+
+                    <div class="form-group">
+
+                        <input type="button" class="btn btn-primary" ng-click="savedata()" value="{{btntext}}" />
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <input type="button" ng-click="clearfunction(this)" value="Clear" />
+
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+        <div id="tableID">
+
+            <table class="display" id="myTable" data-currentpage="1">
+
+                <tr>
+
+                    <th>FirstName</th>
+                    <th>MiddleName</th>
+                    <th>LastName </th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Designation</th>
+                    @*<th>Actions</th>*@
+
+                </tr>
+                <tbody class="list">
+                    <tr ng-repeat="e in record" ng-class-even="'even'" ng-class-odd="'odd'">
+
+                        <td>{{e.FirstName}}</td>
+
+                        <td>{{e.MiddleName}}</td>
+
+                        <td>{{e.LastName}}</td>
+
+                        <td>{{e.Email}}</td>
+
+                        <td>{{e.Contact}}</td>
+
+                        <td>{{e.Designation}}</td>
+
+                        <td><button type="button" ng-click="MyEdit(e)" value="Edit">Edit</button></td>
+
+                        @*<td><a ng-click="deleterecord(e.SR_NO)">Delete</a></td>*@
+
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/AngularController/AdminController.js"></script>
+   
+
+
+
+</body>
+
+</html>
